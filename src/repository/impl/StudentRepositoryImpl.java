@@ -1,4 +1,4 @@
-package impl;
+package repository.impl;
 
 import entity.Student;
 import repository.interfaces.StudentRepository;
