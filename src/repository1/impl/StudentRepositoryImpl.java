@@ -1,7 +1,7 @@
-package repository.impl;
+package repository1.impl;
 
 import entity.Student;
-import repository.interfaces.StudentRepository;
+import repository1.interfaces.StudentRepository;
 
 import java.sql.*;
 import java.util.ArrayList;

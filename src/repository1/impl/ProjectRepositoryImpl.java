@@ -1,7 +1,7 @@
-package repository.impl;
+package repository1.impl;
 
 import entities.Project;
-import repository.interfaces.ProjectRepository;
+import repository1.interfaces.ProjectRepository;
 
 import java.util.ArrayList;
 import java.util.List;

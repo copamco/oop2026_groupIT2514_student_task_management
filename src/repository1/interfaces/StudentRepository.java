@@ -1,4 +1,4 @@
-package repository.interfaces;
+package repository1.interfaces;
 
 import entity.Student;
 import java.util.List;
