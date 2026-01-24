@@ -1,13 +1,35 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-void main() {
-  //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-  // to see how IntelliJ IDEA suggests fixing it.
-  IO.println(String.format("Hello and welcome!"));
+import db.DatabaseConnection;
+import entities.Project;
+import entities.Task;
+import entities.TaskStatus;
 
-  for (int i = 1; i <= 5; i++) {
-    //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-    // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-    IO.println("i = " + i);
+import java.sql.Connection;
+
+
+import static db.connect.*;
+
+public class Main {
+  public static void main(String[] args) {
+//        try (Connection connection = DatabaseConnection.getConnection()) {
+//
+//            createTableIfNeeded(connection);
+//
+//            insertUser(connection, "Alice", "alice@example.com");
+//            insertUser(connection, "Bob", "bob@example.com");
+//            insertUser(connection, "robe", "bob2@example.com");
+//            findUserByEmail(connection, "yera@gmail.com");
+//            deleteUserById(connection, 2);
+//            printAllUsers(connection);
+
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
+    Project n1 = new Project(1,"n1","dwefwff");
+    n1.toString();
+
+    Task t1 = new Task(1,"task1", TaskStatus.IN_PROGRESS,2,1);
+
+
   }
+
 }
