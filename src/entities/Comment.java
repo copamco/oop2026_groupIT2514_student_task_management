@@ -2,46 +2,55 @@ package entities;
 
 public class Comment {
     private int id;
-    private String text;
     private int taskId;
-    private int authorStudentId;
+    private int studentId;
+    private String text;
 
-    public Comment(int id, String text, int taskId, int authorStudentId) {
+    public Comment(int id, int taskId, int studentId, String text) {
         this.id = id;
-        setText(text);
         this.taskId = taskId;
-        this.authorStudentId = authorStudentId;
+        this.studentId = studentId;
+        this.text = text;
     }
 
     public int getId() {
         return id;
     }
 
-    public String getText() {
-        return text;
-    }
-
-    public void setText(String text) {
-        if (text == null || text.isBlank()) {
-            throw new IllegalArgumentException("Comment text cannot be empty");
-        }
-        this.text = text;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public int getTaskId() {
         return taskId;
     }
 
-    public int getAuthorStudentId() {
-        return authorStudentId;
+    public int getStudentId() {
+        return studentId;
+    }
+
+    public String getText() {
+        return text;
+    }
+
+    public void setTaskId(int taskId) {
+        this.taskId = taskId;
+    }
+
+    public void setStudentId(int studentId) {
+        this.studentId = studentId;
+    }
+
+    public void setText(String text) {
+        this.text = text;
     }
 
     @Override
     public String toString() {
         return "Comment{id=" + id +
-                ", text='" + text + '\'' +
                 ", taskId=" + taskId +
-                ", authorStudentId=" + authorStudentId +
+                ", studentId=" + studentId +
+                ", text='" + text + '\'' +
                 '}';
     }
 }
