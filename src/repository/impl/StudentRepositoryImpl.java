@@ -1,6 +1,6 @@
 package repository.impl;
 
-import entity.Student;
+import entities.Student;
 import repository.interfaces.StudentRepository;
 
 import java.sql.*;
