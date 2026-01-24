@@ -20,7 +20,7 @@ public class Student {
     }
 
     public void setName(String name) {
-        if (name == null || name.isBlank()) {
+        if (name == null || name.trim().isEmpty()) {
             throw new IllegalArgumentException("Name cannot be empty");
         }
         this.name = name;
@@ -31,7 +31,7 @@ public class Student {
     }
 
     public void setEmail(String email) {
-        if (email == null || email.isBlank()) {
+        if (email == null || email.trim().isEmpty()) {
             throw new IllegalArgumentException("Email cannot be empty");
         }
         this.email = email;
@@ -45,4 +45,3 @@ public class Student {
                 '}';
     }
 }
-
