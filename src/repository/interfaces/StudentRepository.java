@@ -1,6 +1,6 @@
 package repository.interfaces;
 
-import entity.Student;
+import entities.Student;
 import java.util.List;
 
 public interface StudentRepository {
