@@ -2,6 +2,8 @@ package repository.impl;
 
 import entities.Comment;
 import repository.interfaces.CommentRepository;
+import db.DatabaseConnection;
+import db.connect;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -10,7 +12,7 @@ import java.util.List;
 public class CommentRepositoryImpl implements CommentRepository {
 
     private final Connection connection;
-
+    //позволяет гипко менять ДБ, можно эксперементировать
     public CommentRepositoryImpl(Connection connection) {
         this.connection = connection;
     }
@@ -20,10 +22,11 @@ public class CommentRepositoryImpl implements CommentRepository {
         String sql = "INSERT INTO comments(task_id, student_id, text) VALUES (?, ?, ?) RETURNING id";
 
         try (PreparedStatement stmt = connection.prepareStatement(sql)) {
+            //для того чтобы не было SQL иньекций
             stmt.setInt(1, comment.getTaskId());
             stmt.setInt(2, comment.getStudentId());
             stmt.setString(3, comment.getText());
-
+            //для того чтобы не было SQL иньекций
             ResultSet rs = stmt.executeQuery();
             if (rs.next()) {
                 comment.setId(rs.getInt("id"));
@@ -31,7 +34,7 @@ public class CommentRepositoryImpl implements CommentRepository {
             return comment;
 
         } catch (SQLException e) {
-            throw new RuntimeException("Error creating comment", e);
+            throw new RuntimeException("коментария не смог создатся", e);
         }
     }
 
@@ -54,7 +57,7 @@ public class CommentRepositoryImpl implements CommentRepository {
             return null;
 
         } catch (SQLException e) {
-            throw new RuntimeException("Comment not found", e);
+            throw new RuntimeException("коментарий не найден", e);
         }
     }
 
@@ -76,7 +79,7 @@ public class CommentRepositoryImpl implements CommentRepository {
             return comments;
 
         } catch (SQLException e) {
-            throw new RuntimeException("Error fetching comments", e);
+            throw new RuntimeException("ошибка при получении комментариев", e);
         }
     }
 
@@ -92,7 +95,7 @@ public class CommentRepositoryImpl implements CommentRepository {
             stmt.executeUpdate();
 
         } catch (SQLException e) {
-            throw new RuntimeException("Error updating comment", e);
+            throw new RuntimeException("абдеит не прошла", e);
         }
     }
 
@@ -104,7 +107,7 @@ public class CommentRepositoryImpl implements CommentRepository {
             stmt.setInt(1, id);
             stmt.executeUpdate();
         } catch (SQLException e) {
-            throw new RuntimeException("Error deleting comment", e);
+            throw new RuntimeException("ошибка, кометарий не удалилось", e);
         }
     }
 }

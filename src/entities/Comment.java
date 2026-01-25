@@ -16,7 +16,6 @@ public class Comment {
     public int getId() {
         return id;
     }
-
     public void setId(int id) {
         this.id = id;
     }
@@ -46,7 +45,7 @@ public class Comment {
     }
 
     @Override
-    public String toString() {
+        public String toString() {
         return "Comment{id=" + id +
                 ", taskId=" + taskId +
                 ", studentId=" + studentId +

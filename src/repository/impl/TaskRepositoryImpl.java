@@ -2,6 +2,8 @@ package repository.impl;
 
 import entities.Task;
 import repository.interfaces.TaskRepository;
+import db.DatabaseConnection;
+import db.connect;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -33,7 +35,7 @@ public class TaskRepositoryImpl implements TaskRepository {
             return task;
 
         } catch (SQLException e) {
-            throw new RuntimeException("Error creating task", e);
+            throw new RuntimeException("ошибка в созданий заданий", e);
         }
     }
 
@@ -57,7 +59,7 @@ public class TaskRepositoryImpl implements TaskRepository {
             return null;
 
         } catch (SQLException e) {
-            throw new RuntimeException("Task not found", e);
+            throw new RuntimeException("заданий не найдена", e);
         }
     }
 
@@ -80,7 +82,7 @@ public class TaskRepositoryImpl implements TaskRepository {
             return tasks;
 
         } catch (SQLException e) {
-            throw new RuntimeException("Error fetching tasks", e);
+            throw new RuntimeException("ошибка в получений заданий", e);
         }
     }
 
@@ -98,7 +100,7 @@ public class TaskRepositoryImpl implements TaskRepository {
             stmt.executeUpdate();
 
         } catch (SQLException e) {
-            throw new RuntimeException("Error updating task", e);
+            throw new RuntimeException("ошибка в обновлений заданий", e);
         }
     }
 
@@ -110,7 +112,7 @@ public class TaskRepositoryImpl implements TaskRepository {
             stmt.setInt(1, id);
             stmt.executeUpdate();
         } catch (SQLException e) {
-            throw new RuntimeException("Error deleting task", e);
+            throw new RuntimeException("заданйи не смог самоуничтожиться", e);
         }
     }
 }

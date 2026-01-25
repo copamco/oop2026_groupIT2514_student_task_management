@@ -27,6 +27,7 @@ public class Task {
     public void setProjectId(int projectId) { this.projectId = projectId; }
     public void setAssignedStudentId(int assignedStudentId) { this.assignedStudentId = assignedStudentId; }
 
+
     @Override
     public String toString() {
         return "Task{id=" + id +
