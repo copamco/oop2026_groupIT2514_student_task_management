@@ -25,7 +25,7 @@ public class Student {
 
     public void setName(String name) {
         if (name == null || name.trim().isEmpty()) {
-            throw new IllegalArgumentException("Name cannot be empty");
+            throw new IllegalArgumentException("имя не может быть пустым");
         }
         this.name = name;
     }
@@ -36,7 +36,7 @@ public class Student {
 
     public void setEmail(String email) {
         if (email == null || email.trim().isEmpty()) {
-            throw new IllegalArgumentException("Email cannot be empty");
+            throw new IllegalArgumentException("электронная почта не может быть пустой");
         }
         this.email = email;
     }

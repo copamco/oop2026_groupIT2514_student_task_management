@@ -21,7 +21,7 @@ public class Project {
 
     public void setName(String name) {
         if (name == null || name.isBlank()) {
-            throw new IllegalArgumentException("Project name cannot be empty");
+            throw new IllegalArgumentException("название проекта не может быть пустой");
         }
         this.name = name;
     }

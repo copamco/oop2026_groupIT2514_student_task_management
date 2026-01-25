@@ -35,7 +35,7 @@ public class TaskRepositoryImpl implements TaskRepository {
             return task;
 
         } catch (SQLException e) {
-            throw new RuntimeException("ошибка в созданий заданий", e);
+            throw new RuntimeException("ошибка в создании задания", e);
         }
     }
 
@@ -59,7 +59,7 @@ public class TaskRepositoryImpl implements TaskRepository {
             return null;
 
         } catch (SQLException e) {
-            throw new RuntimeException("заданий не найдена", e);
+            throw new RuntimeException("задание не найдено", e);
         }
     }
 
@@ -82,7 +82,7 @@ public class TaskRepositoryImpl implements TaskRepository {
             return tasks;
 
         } catch (SQLException e) {
-            throw new RuntimeException("ошибка в получений заданий", e);
+            throw new RuntimeException("ошибка в получении заданий", e);
         }
     }
 
@@ -100,7 +100,7 @@ public class TaskRepositoryImpl implements TaskRepository {
             stmt.executeUpdate();
 
         } catch (SQLException e) {
-            throw new RuntimeException("ошибка в обновлений заданий", e);
+            throw new RuntimeException("ошибка в обновлении заданий", e);
         }
     }
 
@@ -112,7 +112,7 @@ public class TaskRepositoryImpl implements TaskRepository {
             stmt.setInt(1, id);
             stmt.executeUpdate();
         } catch (SQLException e) {
-            throw new RuntimeException("заданйи не смог самоуничтожиться", e);
+            throw new RuntimeException("задание не смогло самоуничтожиться", e);
         }
     }
 }

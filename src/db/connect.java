@@ -85,7 +85,7 @@ public class connect {
                             rs.getString("email")
                     );
                 } else {
-                    System.out.println("User not found");
+                    System.out.println("пользователь не найден");
                 }
             }
         }

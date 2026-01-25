@@ -34,7 +34,7 @@ public class CommentRepositoryImpl implements CommentRepository {
             return comment;
 
         } catch (SQLException e) {
-            throw new RuntimeException("коментария не смог создатся", e);
+            throw new RuntimeException("комментарий не смогло создатся", e);
         }
     }
 
@@ -57,7 +57,7 @@ public class CommentRepositoryImpl implements CommentRepository {
             return null;
 
         } catch (SQLException e) {
-            throw new RuntimeException("коментарий не найден", e);
+            throw new RuntimeException("комментарий не найден", e);
         }
     }
 
@@ -95,7 +95,7 @@ public class CommentRepositoryImpl implements CommentRepository {
             stmt.executeUpdate();
 
         } catch (SQLException e) {
-            throw new RuntimeException("абдеит не прошла", e);
+            throw new RuntimeException("обнова не прошла", e);
         }
     }
 
@@ -107,7 +107,7 @@ public class CommentRepositoryImpl implements CommentRepository {
             stmt.setInt(1, id);
             stmt.executeUpdate();
         } catch (SQLException e) {
-            throw new RuntimeException("ошибка, кометарий не удалилось", e);
+            throw new RuntimeException("ошибка, комментарий не удалён", e);
         }
     }
 }

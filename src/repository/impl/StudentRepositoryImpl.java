@@ -30,7 +30,7 @@ public class StudentRepositoryImpl implements StudentRepository {
             return student;
 
         } catch (SQLException e) {
-            throw new RuntimeException("Error creating student", e);
+            throw new RuntimeException("ошибка в создании студента", e);
         }
     }
 
@@ -52,7 +52,7 @@ public class StudentRepositoryImpl implements StudentRepository {
             return null;
 
         } catch (SQLException e) {
-            throw new RuntimeException("Student not found", e);
+            throw new RuntimeException("студент не найден", e);
         }
     }
 
@@ -74,7 +74,7 @@ public class StudentRepositoryImpl implements StudentRepository {
             return students;
 
         } catch (SQLException e) {
-            throw new RuntimeException("Error fetching students", e);
+            throw new RuntimeException("ошибка при получении данных студента", e);
         }
     }
 }
