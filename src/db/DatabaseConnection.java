@@ -11,9 +11,9 @@ import java.util.Properties;
 public class DatabaseConnection {
 
     private static final String URL =
-            "jdbc:postgresql://aws-1-ap-northeast-1.pooler.supabase.com:5432/postgres?sslmode=require";
+            "jdbc:postgresql://aws-1-us-west-1.pooler.supabase.com:5432/postgres?sslmode=require";
 
-    private static final String USER = "postgres.mrivkaqomaorywhzsntk";
+    private static final String USER = "postgres.yuavppzebzailjlvpyhi";
 
     // пароль читается извне
     private static final String PASSWORD = loadPassword();
