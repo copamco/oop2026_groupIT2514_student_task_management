@@ -1,18 +1,47 @@
 package db;
+
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.util.Properties;
+
 public class DatabaseConnection {
+
     private static final String URL =
-            "jdbc:postgresql://aws-1-us-west-1.pooler.supabase.com:5432/postgres?sslmode=require";
-    private static final String USER = "postgres.yuavppzebzailjlvpyhi";
-    private static final String PASSWORD = "Termiantor_9000"; // ← DATABASE PASSWORD
+            "jdbc:postgresql://aws-1-ap-northeast-1.pooler.supabase.com:5432/postgres?sslmode=require";
+
+    private static final String USER = "postgres.mrivkaqomaorywhzsntk";
+
+    // пароль читается извне
+    private static final String PASSWORD = loadPassword();
+
+    private static String loadPassword() {
+        Properties props = new Properties();
+
+        try (InputStream input = new FileInputStream("config.properties")) {
+            props.load(input);
+
+            String value = props.getProperty("DB_PASSWORD");
+
+            if (value == null || value.isBlank()) {
+                throw new RuntimeException("DB_PASSWORD is not set in config.properties");
+            }
+
+            return value;
+
+        } catch (IOException e) {
+            throw new RuntimeException("Cannot load DB_PASSWORD from config.properties", e);
+        }
+    }
+
     private DatabaseConnection() {
         // no instances
     }
+
     public static Connection getConnection() throws SQLException {
         return DriverManager.getConnection(URL, USER, PASSWORD);
     }
-
 }
-
