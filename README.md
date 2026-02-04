@@ -1,2 +1,2 @@
 TOPIC : Student Task & Project Management Tool
-MEMBERS:Iskander Amangaliyev,Spanov Yerasyl
+MEMBERS:Iskander Amangaliyev,Spanov Yerasyl 
