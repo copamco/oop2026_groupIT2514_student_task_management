@@ -1,14 +1,13 @@
 package repository.interfaces;
 
-import entities.Project;
 import java.util.List;
 
-public interface ProjectRepository {
+public interface ProjectRepository<T> {
 
-    void create(Project project);
+    void create(T project);
 
-    Project findById(int id);
+    T findById(int id);
 
-    List<Project> findAll();
+    List<T> findAll();
 }
 

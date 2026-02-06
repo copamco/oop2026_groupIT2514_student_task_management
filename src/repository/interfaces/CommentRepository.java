@@ -1,13 +1,17 @@
 package repository.interfaces;
 
-import entities.Comment;
 import java.util.List;
+    //Generic Repository
+    public interface CommentRepository<T> {
 
-public interface CommentRepository {
-    Comment create(Comment comment);
-    Comment findById(int id);
-    List<Comment> findAll();
-    void update(Comment comment);
+    T create(T comment);
+
+    T findById(int id);
+
+    List<T> findAll();
+
+    void update(T comment);
+
     void delete(int id);
+    //Generic Repository
 }
-

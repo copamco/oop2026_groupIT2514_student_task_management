@@ -1,13 +1,12 @@
 package repository.interfaces;
 
-import entities.Student;
 import java.util.List;
 
-public interface StudentRepository {
+public interface StudentRepository<T> {
 
-    Student create(Student student);
+    T create(T student);
 
-    Student findById(int id);
+    T findById(int id);
 
-    List<Student> findAll();
+    List<T> findAll();
 }
