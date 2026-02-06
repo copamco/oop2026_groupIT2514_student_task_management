@@ -6,7 +6,7 @@ import repository.interfaces.ProjectRepository;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ProjectRepositoryImpl implements ProjectRepository {
+public class ProjectRepositoryImpl implements ProjectRepository<Project> {
 
     private List<Project> projects = new ArrayList<>();
 

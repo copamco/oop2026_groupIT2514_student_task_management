@@ -7,7 +7,7 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class StudentRepositoryImpl implements StudentRepository {
+public class StudentRepositoryImpl implements StudentRepository<Student> {
 
     private final Connection connection;
 

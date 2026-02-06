@@ -9,7 +9,7 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TaskRepositoryImpl implements TaskRepository {
+public class TaskRepositoryImpl implements TaskRepository<Task> {
 
     private final Connection connection;
 

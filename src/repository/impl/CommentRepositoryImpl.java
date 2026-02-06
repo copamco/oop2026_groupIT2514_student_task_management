@@ -9,7 +9,7 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CommentRepositoryImpl implements CommentRepository {
+public class CommentRepositoryImpl implements CommentRepository<Comment> {
 
     private final Connection connection;
     //позволяет гипко менять ДБ, можно эксперементировать
