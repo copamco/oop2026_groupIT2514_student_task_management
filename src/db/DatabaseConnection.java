@@ -10,10 +10,9 @@ import java.util.Properties;
 
 public class DatabaseConnection {
 
-    private static final String URL =
-            "jdbc:postgresql://aws-1-us-west-1.pooler.supabase.com:5432/postgres?sslmode=require";
+    private static final String URL = "jdbc:postgresql://aws-1-ap-southeast-2.pooler.supabase.com:5432/postgres?sslmode=require";
 
-    private static final String USER = "postgres.yuavppzebzailjlvpyhi";
+    private static final String USER = "postgres.mpxfgoejmjtxlznsnwzk";
 
     // пароль читается извне
     private static final String PASSWORD = loadPassword();
